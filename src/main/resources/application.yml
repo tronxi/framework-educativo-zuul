@@ -20,6 +20,6 @@ zuul:
   routes:
     users:
       path: /user/**
-      serviceId: "user-service"
+      serviceId: "user"
       sensitive-headers: Cookie,Set-Cookie
       stripPrefix: false
