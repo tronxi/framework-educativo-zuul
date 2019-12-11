@@ -2,24 +2,15 @@ spring:
   application:
     name: "zuul service"
 server:
-  port: 8079
-
+  port: 8070
 eureka:
   instance:
     leaseRenewalIntervalInSeconds: 1
     leaseExpirationDurationInSeconds: 2
   client:
     serviceUrl:
-      defaultZone: http://192.168.1.9:8762/eureka/
+      defaultZone: http://raspberrytronxi2.ddns.net:8762/eureka/
     healthcheck:
       enabled: true
     lease:
       duration: 5
-
-zuul:
-  routes:
-    users:
-      path: /user/**
-      serviceId: "user"
-      sensitive-headers: Cookie,Set-Cookie
-      stripPrefix: false
