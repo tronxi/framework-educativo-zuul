@@ -1,11 +1,14 @@
 spring:
   application:
-    name: "zuul service"
+    name: "swagger"
+  cloud:
+    client:
+      hostname: http://raspberrytronxi3.ddns.net
 server:
   port: 8070
 eureka:
   instance:
-    status-page-url-path: ${spring.cloud.client.hostname}:${server.port}/swagger-ui.html
+    status-page-url-path: http://raspberrytronxi3.ddns.net:${server.port}/swagger-ui.html
     leaseRenewalIntervalInSeconds: 1
     leaseExpirationDurationInSeconds: 2
   client:
