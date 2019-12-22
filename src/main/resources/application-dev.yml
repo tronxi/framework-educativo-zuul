@@ -6,14 +6,15 @@ spring:
       hostname: http://raspberrytronxi3.ddns.net
 server:
   port: 8070
+eureka-host: http://raspberrytronxi2.ddns.net
 eureka:
   instance:
-    status-page-url-path: http://raspberrytronxi3.ddns.net:${server.port}/swagger-ui.html
+    status-page-url-path: http://${spring.cloud.client.hostname}:${server.port}/swagger-ui.html
     leaseRenewalIntervalInSeconds: 1
     leaseExpirationDurationInSeconds: 2
   client:
     serviceUrl:
-      defaultZone: http://raspberrytronxi2.ddns.net:8762/eureka/
+      defaultZone: http://${eureka-host}:8762/eureka/
     healthcheck:
       enabled: true
     lease:
