@@ -3,7 +3,7 @@ spring:
     name: "swagger"
   cloud:
     client:
-      hostname: https://raspberrytronxi3.ddns.net
+      hostname: http://raspberrytronxi3.ddns.net
 server:
   port: 8070
 eureka-host: raspberrytronxi2.ddns.net
