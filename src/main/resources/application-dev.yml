@@ -6,7 +6,7 @@ spring:
       hostname: http://raspberrytronxi3.ddns.net
 server:
   port: 8070
-eureka-host: http://raspberrytronxi2.ddns.net
+eureka-host: raspberrytronxi2.ddns.net
 eureka:
   instance:
     status-page-url-path: ${spring.cloud.client.hostname}:${server.port}/swagger-ui.html
