@@ -27,7 +27,9 @@ public class DocumentationConfig implements SwaggerResourcesProvider {
         List<SwaggerResource> resources = new ArrayList<>();
         List<Route> routes = routeLocator.getRoutes();
         System.out.println("rutas " + routes);
-        routes.forEach(route ->
+        routes.stream()
+                .filter(route -> !route.getId().contains("gateway"))
+                .forEach(route ->
                 resources.add(swaggerResource(route.getId(), route.getFullPath().replace("**", "v2/api-docs"),"2.0"))
         );
         return resources;
