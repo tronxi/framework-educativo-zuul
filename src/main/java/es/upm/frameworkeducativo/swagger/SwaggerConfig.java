@@ -22,9 +22,12 @@ public class SwaggerConfig {
             List<SwaggerResource> resources = new ArrayList<>();
             properties.getRoutes().values().stream()
                     .filter(zuulRoute -> !zuulRoute.getServiceId().contains("gateway"))
-                    .forEach(route ->
+                    .forEach(route ->{
+                        System.out.println("serviceId " + route.getServiceId());
+                        System.out.println("url " + route.getUrl());
+                        System.out.println("path " + route.getPath());
                             resources
-                                    .add(createResource(route.getServiceId(), route.getServiceId(), "2.0")));
+                                    .add(createResource(route.getServiceId(), route.getServiceId(), "2.0"));});
             return resources;
         };
     }
