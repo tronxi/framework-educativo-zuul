@@ -7,11 +7,13 @@ spring:
 server:
   port: 8070
 eureka-host: default
+zuul-service: zuul-service
 eureka:
   instance:
     status-page-url-path: /swagger-ui.html
     leaseRenewalIntervalInSeconds: 1
     leaseExpirationDurationInSeconds: 2
+    hostname: ${zuul-service}
   client:
     serviceUrl:
       defaultZone: ${eureka-host}:8761/eureka/
