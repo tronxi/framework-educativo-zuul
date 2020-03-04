@@ -12,4 +12,4 @@ FROM openjdk:8-alpine
 ENV zuul-service zuul-service
 ENV profile dev
 COPY --from="builder" /target/framework-educativo-0.0.1-SNAPSHOT.jar .
-CMD java -jar -Dspring.profiles.active=${profile} framework-educativo-0.0.1-SNAPSHOT.jar --eureka-host=${eureka_host} --zuul-servic=${zuul-service}
+CMD java -jar -Dspring.profiles.active=${profile} framework-educativo-0.0.1-SNAPSHOT.jar --eureka-host=${eureka_host} --zuul-service=${zuul-service}
